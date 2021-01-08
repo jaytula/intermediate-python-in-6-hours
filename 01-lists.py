@@ -76,3 +76,25 @@ print(mylist3) # [0, 0, 0, 0, 0]
 mylist4 = [0, 1, 2, 3, 4, 5]
 result_list = mylist3 + mylist4
 print(result_list) # [0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]
+
+# Slicing
+mylist5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(mylist5[1:5])
+
+# Step index
+print(mylist5[::2]) # [1, 3, 5 ,7, 9]
+
+# Copying lists (lists are reference types)
+list_orig = ['banana', 'cherry', 'apple']
+list_copy = list_orig # Same reference
+list_orig.append('lemon')
+print(list_orig)
+print(list_copy)
+
+# Copying the right way
+list_copy2 = list_orig.copy()
+list_copy3 = list(list_orig) # Another way to copy
+list_copy4 = list_orig[:] # Slicing as a way to copy
+list_orig.append('blueberry')
+print(list_orig)
+print(list_copy2)
