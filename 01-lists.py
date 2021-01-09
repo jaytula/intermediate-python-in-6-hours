@@ -98,3 +98,8 @@ list_copy4 = list_orig[:] # Slicing as a way to copy
 list_orig.append('blueberry')
 print(list_orig)
 print(list_copy2)
+
+# List comprehension - Expression and for-in loop over the list
+list_of_nums = [1, 2, 3, 4, 5]
+square_of_nums = [i*i for i in list_of_nums]
+print(square_of_nums)
