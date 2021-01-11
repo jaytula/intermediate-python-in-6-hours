@@ -29,3 +29,39 @@ if "Max" in tupleExample:
   print('yes')
 else:
   print('no')
+
+# Length of tuple
+letters = ('a', 'p', 'p', 'l', 'e')
+print(len(letters))
+
+print(letters.count('p')) # 2
+print(letters.index('p')) # 1
+
+# List conversion
+lettersList = list(letters)
+print(lettersList)
+
+# tuple conversion
+print(tuple(lettersList))
+
+# slicing
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(numbers[2:5]) # 3, 4 ,5
+
+# slicing with step
+print(numbers[::2])
+
+# reverse tuple trick with negative one step
+print(numbers[::-1])
+
+# Unpacking
+person1 = "Max", 28, "Boston"
+name, age, city = person1
+print(name, age, city)
+
+# Unpack with star
+numbers = (0, 1, 2, 3, 4)
+i1, *i2, i3 = numbers
+print(i1) # 0
+print(i2) # [1, 2, 3]
+print(i3) # 4
