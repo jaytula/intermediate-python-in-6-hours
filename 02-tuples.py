@@ -65,3 +65,17 @@ i1, *i2, i3 = numbers
 print(i1) # 0
 print(i2) # [1, 2, 3]
 print(i3) # 4
+
+import sys
+
+# Tuples can be more size-efficient because they are immutable
+my_list = [0, 1, 2, "hello", True]
+my_tuple = (0, 1, 2, "hello", True)
+print(sys.getsizeof(my_list), "bytes")
+print(sys.getsizeof(my_tuple), "bytes")
+
+# It can be more efficient to iterate over a tuple
+import timeit
+
+print(timeit.timeit(stmt="[0, 1, 2, 3, 4,5]", number=1000000))
+print(timeit.timeit(stmt="(0, 1, 2, 3, 4,5)", number=1000000))
