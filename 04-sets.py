@@ -60,3 +60,36 @@ print(odds&evens)
 print(odds.intersection(evens))
 print(odds&primes)
 print(evens&primes)
+
+# Differences
+setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+setB = {1, 2, 3, 10, 11, 12}
+print(setA - setB) # {4, 5, 6, 7, 8, 9}
+print(setA.difference(setB))
+
+# Symmetric Difference
+print(setA.symmetric_difference(setB)) #{4, 5, 6, 7, 8, 10, 11, 12}
+
+# Using Set update method. Modifies set in place
+setA = {1, 2, 3}
+setB = {4}
+setA.update(setB)
+print(setA) # {1, 2, 3, 4}
+
+# Intersection upate method
+setA = {1, 2, 3}
+setB = {3, 4, 5}
+setA.intersection_update(setB)
+print(setA) # {3}
+
+# Difference update method
+setA = {1, 2, 3}
+setB = {3, 4, 5}
+setA.difference_update(setB)
+print(setA) # {1, 2}
+
+# Symmetric diffrence update
+setA = {1, 2, 3}
+setB = {3, 4, 5}
+setA.symmetric_difference_update(setB)
+print(setA) # {1, 2, 4, 5}
