@@ -93,3 +93,40 @@ setA = {1, 2, 3}
 setB = {3, 4, 5}
 setA.symmetric_difference_update(setB)
 print(setA) # {1, 2, 4, 5}
+
+# Subset test
+setA = {1, 2, 3, 4, 5, 6}
+setB = {1, 2, 3}
+print(setA.issubset(setB)) # false
+print(setB.issubset(setA)) # true
+
+# isssuperset test
+setA = {1, 2, 3, 4, 5, 6}
+setB = {1, 2, 3}
+print(setA.issuperset(setB)) # true
+print(setB.issuperset(setA)) # false
+
+# isdisjoint test
+setA = {1, 2, 3}
+setB = {4, 5, 6}
+setC = {3, 4}
+print(setA.isdisjoint(setB)) # true
+print(setA.isdisjoint(setC)) # false
+
+# sets are reference types
+setA = {1, 2, 3, 4, 5, 6}
+setB = setA
+print(setA)
+print(setB)
+setB.add(7)
+print(setA)
+print(setB)
+
+# make actual copy with copy method
+setA = {1, 2, 3, 4, 5, 6}
+setB = setB.copy()
+setB = set(setA)
+
+# Make frozen set. Set that cannot be changed
+setA = frozenset([1, 2, 3, 4])
+# setA.add(5) # Error
