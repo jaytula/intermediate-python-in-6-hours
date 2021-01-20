@@ -33,3 +33,20 @@ print(greeting + ' ' + name)
 # Iterate over string with for-in loop
 for ch in 'helloworld':
   print(ch)
+
+if "all" in "hallo":
+  print("Yes")
+else:
+  print("No")
+
+my_string = '    Hello World    '
+print(my_string.strip())
+my_string = my_string.strip()
+print(my_string.upper())
+print(my_string.lower())
+print(my_string.startswith('Hello'))
+print(my_string.endswith('orld'))
+print(my_string.find('or'))
+print(my_string.find('z')) # -1
+print(my_string.count('o')) # 2
+print(my_string.replace('o', 'p'))
