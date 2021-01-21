@@ -1,3 +1,4 @@
+from timeit import default_timer as timer
 # Strings are immutable
 my_string = "Hello"
 my_string = 'Hello'
@@ -50,3 +51,31 @@ print(my_string.find('or'))
 print(my_string.find('z')) # -1
 print(my_string.count('o')) # 2
 print(my_string.replace('o', 'p'))
+
+my_string = 'how are you doing'
+my_list = my_string.split(' ')
+print(my_list)
+
+new_string = ' '.join(my_list)
+print(new_string)
+
+my_list = ['a'] * 6
+print(my_list)
+
+print(''.join(my_list))
+
+my_list = ['a'] * 10000000
+
+# Bad
+start = timer()
+my_string = ''
+for i in my_list:
+  my_string += i
+stop = timer()
+print(stop - start)
+
+# Faster
+start = timer()
+my_string = ''.join(my_list)
+stop = timer()
+print(stop - start)
