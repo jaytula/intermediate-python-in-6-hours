@@ -79,3 +79,25 @@ start = timer()
 my_string = ''.join(my_list)
 stop = timer()
 print(stop - start)
+
+# String formatting
+
+## Percent formatting
+var = "Tom"
+my_string = "the variable is %s" % var
+print(my_string)
+var = 4
+print("the variable is %d" % var)
+var = 3.1415
+print("the variable is %.2f" % var)
+
+## Newer formatting style with dot-format
+var = 3.1415
+print("the variable is {}".format(var))
+print("the variable is {:.2f}".format(var))
+var2 = 6
+print("the variable is {:.2f} and {}".format(var, var2))
+
+## Newest using f-strings (since python 3.6)
+var = 6.825
+print(f"the variable is {var} and {var*2}")
