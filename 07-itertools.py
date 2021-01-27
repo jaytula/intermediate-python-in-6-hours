@@ -1,7 +1,7 @@
 # itertools: product, permutations, combinations, accumulate, groupby, and infinit iterators
 # - types that can be used in a for-in loop
 
-from itertools import product, permutations, combinations, combinations_with_replacement, accumulate
+from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
 import operator
 
 # product for Cartesion product
@@ -25,3 +25,24 @@ print(list(accumulate([1,2,3,4]))) # [1, 3, 6, 10]
 # accumlate with custom func
 print(list(accumulate([1,2,3,4], func=operator.mul))) # [1, 2, 6, 24]
 print(list(accumulate([1,2,5, 3,4], func=max))) # [1,2,5,5,5]
+
+# groupby
+def smaller_than_3(x):
+  return x < 3
+
+group_obj = groupby([1,2,3,4], key=smaller_than_3)
+for key, value in group_obj:
+  print (key, list(value))
+
+group_obj = groupby([1,2,3,4], key=lambda x: x < 3)
+for key, value in group_obj:
+  print (key, list(value))
+
+persons = [{'name': 'Tim', 'age': 25}, {'name': 'Dan', 'age': 25}, {'name': 'Lisa', 'age': 27}, {'name': 'Claire', 'age': 28}]
+group_obj = groupby(persons, key=lambda x: 'older than 25' if (x['age'] > 25) else '25 or younger')
+for key, value in group_obj:
+  print(key, list(value))
+
+group_obj = groupby(persons, key=lambda x: x['age'])
+for key, value in group_obj:
+  print(key, list(value))
