@@ -1,7 +1,7 @@
 # itertools: product, permutations, combinations, accumulate, groupby, and infinit iterators
 # - types that can be used in a for-in loop
 
-from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
+from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby, count, cycle, repeat
 import operator
 
 # product for Cartesion product
@@ -46,3 +46,22 @@ for key, value in group_obj:
 group_obj = groupby(persons, key=lambda x: x['age'])
 for key, value in group_obj:
   print(key, list(value))
+
+# infinite iterator: count
+for i in count(10):
+  print(i)
+  if i == 15:
+    break
+
+# infinite iterator: cycle
+count = 0
+for i in cycle([1, 2, 3]):
+  if count > 15:
+    break
+  print(i)
+  count += 1
+
+# infinite iterator: repeat
+# repeats a single value 'a' `10 times`
+for i in repeat('a', 10):
+  print(i)
