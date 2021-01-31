@@ -1,19 +1,44 @@
 # Errors and Exceptions
-a = 5 + '10' # TypeError
 
-import nonexistentmodule # Raised 'ModuleNotFoundError'
+try:
+  a = 5 + '10' # TypeError
 
-b = c # 'NameError' because 'c' is not defined
+  import nonexistentmodule # Raised 'ModuleNotFoundError'
 
-f = open('somefile.txt') # 'FileNotFoundError'
+  b = c # 'NameError' because 'c' is not defined
 
-a = [1,2,3]
-a.remove(4) # Raises ValueError
-a[4] # IndexError
+  f = open('somefile.txt') # 'FileNotFoundError'
 
-my_dict = {'name': 'Max'}
-my_dict['age'] # KeyError
+  a = [1,2,3]
+  a.remove(4) # Raises ValueError
+  a[4] # IndexError
 
-x = -5
-if x < 0:
-  raise Exception('x should be positive')
+  my_dict = {'name': 'Max'}
+  my_dict['age'] # KeyError
+
+  x = -5
+  if x < 0:
+    raise Exception('x should be positive')
+
+  x = -5
+  assert (x > 0), 'x is not positive'
+except:
+  pass
+
+try:
+  a = 5 /0
+except Exception as e:
+  print(e)
+
+try:
+  g = 20
+  a = 5 / 0
+  b = 10 + '10'
+except ZeroDivisionError as e:
+  print(e)
+except TypeError as e:
+  print(e)
+else:
+  print('Everything okay')
+finally: # always runs no matter if there is exception or not
+  print('Cleaning up here')
