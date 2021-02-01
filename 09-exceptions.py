@@ -42,3 +42,29 @@ else:
   print('Everything okay')
 finally: # always runs no matter if there is exception or not
   print('Cleaning up here')
+
+# Create own Error
+class ValueTooHighError(Exception):
+  pass
+
+def test_value(x):
+  if x > 100:
+    raise ValueTooHighError('value is too high')
+  if x < 5:
+    raise ValueTooSmallError('value is too small', x)
+
+def runTest(x):
+  try:
+    test_value(x)
+  except ValueTooHighError as e:
+    print(e)
+  except ValueTooSmallError as e:
+    print(e.message, e.value)
+
+class ValueTooSmallError(Exception):
+  def __init__(self, message, value):
+    self.message = message
+    self.value = value
+
+runTest(300)
+runTest(2)
