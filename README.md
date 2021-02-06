@@ -25,3 +25,9 @@ https://www.youtube.com/watch?v=HGOBQPFzWKo
 19. Shallow vs Deep Copying
 20. The Asterisk (*) Operator
 21. Context Managers
+
+## Chapter 10. Logging.
+
+- Use JSON format for logging.
+- Recommends `pip install python-json-logger`
+- See GitHub README for more info.
