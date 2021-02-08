@@ -39,3 +39,17 @@ def encode_user(o):
 
 userJSON = json.dumps(user, default=encode_user)
 print(userJSON)
+
+from json import JSONEncoder
+
+class UserEncoder(JSONEncoder):
+  def default(self, o):
+    if isinstance(o, User):
+      return {'name': o.name, 'age': o.age, o.__class__.__name__: True}
+    return JSONEncoder.default(self, o)
+
+userJSON = json.dumps(user, cls=UserEncoder)
+print(userJSON)
+
+userJSON = UserEncoder().encode(user)
+print(userJSON)
