@@ -53,3 +53,14 @@ print(userJSON)
 
 userJSON = UserEncoder().encode(user)
 print(userJSON)
+
+# Decode back into an object. Need to write a custom decoder
+
+def decode_user(dct):
+  if User.__name__ in dct:
+    return User(name=dct['name'], age=dct['age'])
+  return dct
+
+user = json.loads(userJSON, object_hook=decode_user)
+print(type(user)) # <class '__main__.User'>
+print(user.name)
