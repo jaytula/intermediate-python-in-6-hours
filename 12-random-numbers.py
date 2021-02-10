@@ -29,3 +29,19 @@ print(random.choices(mylist, k=3))
 
 # shuffle a list
 print(random.shuffle(mylist))
+
+# Ranbdom seeding to demonstrate psuedo-randomness
+random.seed(1)
+print(random.random())
+print(random.randint(1, 10))
+
+random.seed(1)
+print(random.random())
+print(random.randint(1, 10))
+
+# Use secrets module for true randomness. Only has three functions
+import secrets
+
+print(secrets.randbelow(10)) # From [0, 10)
+print(secrets.randbits(4)) # from [0, 15]
+print(secrets.choice(list("ABCDEFGH"))) # Picks one at random
