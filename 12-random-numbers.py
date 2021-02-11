@@ -45,3 +45,5 @@ import secrets
 print(secrets.randbelow(10)) # From [0, 10)
 print(secrets.randbits(4)) # from [0, 15]
 print(secrets.choice(list("ABCDEFGH"))) # Picks one at random
+
+import numpy

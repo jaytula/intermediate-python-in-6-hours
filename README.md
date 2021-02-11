@@ -31,3 +31,11 @@ https://www.youtube.com/watch?v=HGOBQPFzWKo
 - Use JSON format for logging.
 - Recommends `pip install python-json-logger`
 - See GitHub README for more info.
+
+## VirtualEnv
+
+- Navigate to project folder
+- Add .venv to .gitignore
+- Create `python3 -m venv .venv`
+- Activate with `source .venv/bin/activate`
+- `pip3 install numpy`
