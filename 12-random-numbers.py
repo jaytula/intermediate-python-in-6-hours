@@ -47,3 +47,28 @@ print(secrets.randbits(4)) # from [0, 15]
 print(secrets.choice(list("ABCDEFGH"))) # Picks one at random
 
 import numpy
+
+# numpy.random.rand(number) returns array of floats betwen [0, 1)
+print(numpy.random.rand(20))
+
+# numpy.random.rand supports multi-dimensional arrays. for 3x3
+print(numpy.random.rand(3, 3))
+
+# Use randint for integers. 3 random integers
+print(numpy.random.randint(0, 10, 3))
+
+# use tuple with randint for multi-dimensional array
+print(numpy.random.randint(0, 10, (3, 4)))
+
+# Shuffles elements in the first axis
+arr = numpy.array([[1,2,3], [4,5,6], [7,8,9]])
+print(arr)
+numpy.random.shuffle(arr)
+print(arr)
+
+# Seed function for numpy
+numpy.random.seed(1)
+print(numpy.random.rand(3, 3))
+print(numpy.random.rand(3, 3))
+numpy.random.seed(1)
+print(numpy.random.rand(3, 3))
