@@ -38,5 +38,21 @@ print(add5(7))
 
 # Function identity
 # Print out help. Note that Python is confused about name of function (i.e. 'wrapper')
-help(add5)
+#help(add5)
 print(add5.__name__)
+
+def repeat(num_times):
+  def decorator_repeat(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+      for _ in range(num_times):
+        result = func(*args, *kwargs)
+      return result
+    return wrapper
+  return decorator_repeat
+
+@repeat(num_times=3)
+def greet(name):
+  print(f'Hello {name}')
+
+greet('Alex')
