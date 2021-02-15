@@ -1,3 +1,5 @@
+import functools
+
 # Two types of decorators
 # - function decorators
 # - class decorators
@@ -19,6 +21,8 @@ print_name()
 
 
 def start_end_decorator_2(func):
+  # Fixes issue with function identity
+  @functools.wraps(func)
   def wrapper(*args, **kwargs):
     print("Start2")
     result = func(*args, **kwargs)
@@ -31,3 +35,8 @@ def add5(x):
   return x + 5
 
 print(add5(7))
+
+# Function identity
+# Print out help. Note that Python is confused about name of function (i.e. 'wrapper')
+help(add5)
+print(add5.__name__)
