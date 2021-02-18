@@ -97,3 +97,11 @@ def say_hello():
 say_hello()
 say_hello()
 say_hello()
+
+# Typical Uses of decorators
+# - Implement a timer decorator. Calculate executiontime of a function
+# - Debug decorator. Print out information of the called function and its arguments
+# - Check decorator. To check if args fulfill some requirement
+# - Register functions. Like plugins
+# - Cache return values
+# - Add information or update state
