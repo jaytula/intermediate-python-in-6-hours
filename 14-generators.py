@@ -30,3 +30,13 @@ print(sum(g)) #6
 # sorted
 g = mygenerator()
 print(sorted(g))
+
+def countdown(num):
+  print('Starting')
+  while num > 0:
+    yield num
+    num -= 1 
+
+g = countdown(4)
+for i in g:
+  print(i)
