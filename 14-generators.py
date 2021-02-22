@@ -65,3 +65,20 @@ def firstn_generator(n):
 print(list(firstn_generator(10)))
 print(sum(firstn_generator(10)))
 print(sys.getsizeof(firstn_generator(1000000))) # 88 bytes
+
+# fibonacci
+
+def fib_generator(limit):
+  curr, next = 0, 1
+  while curr < limit:
+    yield curr
+    curr, next = next, curr+next
+
+fib = fib_generator(200)
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(list(fib))
