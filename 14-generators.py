@@ -82,3 +82,13 @@ print(next(fib))
 print(next(fib))
 print(next(fib))
 print(list(fib))
+
+# generator expressions - similar to list comprehensions
+mygenerator = (i for i in range(100) if i % 2 == 0)
+print(sys.getsizeof(mygenerator))
+for i in mygenerator:
+  print(i)
+
+mylist = [i for i in range(100) if i % 2 == 0]
+print(sys.getsizeof(mylist))
+print(mylist)
