@@ -24,3 +24,6 @@ for p in processes:
   p.join()
 
 print('end main')
+
+# To see the processes. Launch htop and filter with F4 for python.
+# Then run program
