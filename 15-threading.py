@@ -7,17 +7,18 @@ def square_numbers():
     i * i
     time.sleep(0.1)
 
-threads = []
-num_threads = 10
+if __name__ == "__main__":
+  threads = []
+  num_threads = 10
 
-for i in range(num_threads):
-  t = Thread(target=square_numbers)
-  threads.append(t)
+  for i in range(num_threads):
+    t = Thread(target=square_numbers)
+    threads.append(t)
 
-for t in threads:
-  t.start()
+  for t in threads:
+    t.start()
 
-for t in threads:
-  t.join()
+  for t in threads:
+    t.join()
 
-print('end main')
+  print('end main')
