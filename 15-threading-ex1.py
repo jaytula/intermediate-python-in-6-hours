@@ -6,13 +6,13 @@ database_value = 0
 def increase(lock):
   global database_value
   
-  lock.acquire()
-  local_copy = database_value
-  # processing
-  local_copy += 1
-  time.sleep(0.5)
-  database_value = local_copy
-  lock.release()
+  # use lock as a context manager
+  with lock:
+    local_copy = database_value
+    # processing
+    local_copy += 1
+    time.sleep(0.5)
+    database_value = local_copy
 
 if __name__ == "__main__":
   lock = Lock()
