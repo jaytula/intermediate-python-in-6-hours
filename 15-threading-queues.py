@@ -18,7 +18,7 @@ if __name__ == "__main__":
   num_threads = 10
   for i in range(num_threads):
     thread = Thread(target=worker, args=(q, lock))
-    thread.daemon=True
+    thread.daemon=True # By default this is False meaning that the workers won't automatically die
     thread.start()
 
   for i in range(1, 21):
